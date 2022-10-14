@@ -13,7 +13,13 @@
         <form>
           <h1>Create an account</h1>
           <label for="email" class="form-group">
-            <input type="email" name="email" class="form-control" required />
+            <input
+              type="email"
+              name="email"
+              class="form-control"
+              required
+              placeholder=" "
+            />
             <span>Email (required)</span>
             <span class="border"></span>
           </label>
@@ -22,12 +28,15 @@
               type="password"
               name="password"
               class="form-control"
+              minlength="5"
               required
+              placeholder=" "
             />
             <span>Password (required)</span>
             <span class="border"></span>
           </label>
           <button type="submit" class="submit">Submit</button>
+          <div class="error-message"></div>
         </form>
       </div>
     </div>
