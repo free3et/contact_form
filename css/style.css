@@ -118,8 +118,14 @@ h1 {
     margin: 0 auto;
 }
 
-input:-webkit-autofill {
+/* input:-webkit-autofill {
     transition: all 5000s ease-in-out;
+} */
+
+.error-message {
+    padding-top: 15px;
+    color: red;
+    text-align: center;
 }
 
 .form-group {
@@ -161,13 +167,17 @@ input:-webkit-autofill {
     font-size: 16px;
 }
 
-/* .form-control:invalid {
-  border: 1px solid red;
-} */
+.error {
+    border-bottom: 1px solid red;
+}
 
 .form-control:focus + span,
 .form-control:valid + span {
     transform: translateY(-20px) scale(0.8);
+}
+
+.form-control:invalid:not(:focus) + span {
+    top: -8px;
 }
 
 .form-control:focus span.border,
@@ -206,15 +216,10 @@ button:before {
     bottom: 0;
     left: 0;
     background: #2098d1;
-    -webkit-transition-timing-function: ease-out;
     transition-timing-function: ease-out;
-    -webkit-transition-duration: 0.3s;
     transition-duration: 0.3s;
-    -webkit-transition-property: transform;
     transition-property: transform;
-    -webkit-transform: scaleX(0);
     transform: scaleX(0);
-    -webkit-transform-origin: 0 50%;
     transform-origin: 0 50%;
 }
 
@@ -297,6 +302,8 @@ h2 {
     margin-top: 10px;
 }
 
+/* Media */
+
 @media (max-width: 1024px) {
     h1 {
         font-size: 28px;
@@ -308,9 +315,8 @@ h2 {
     }
 
     .popup.open {
-      width: 40rem;
-
-  }
+        width: 40rem;
+    }
 }
 
 @media (max-width: 1024px) and (orientation:landscape) {
@@ -326,7 +332,7 @@ h2 {
     }
 
     .form-group {
-        margin-bottom: 37px;
+        margin-bottom: 35px;
     }
 
     .form-group span {
@@ -334,14 +340,14 @@ h2 {
     }
 
     .form-control {
-        height: 45px;
+        height: 42px;
         font-size: 14px;
     }
 
     button {
-        width: 160px;
-        height: 45px;
-        margin-top: 20px;
+        width: 150px;
+        height: 40px;
+        margin-top: 15px;
     }
 
     .popup.open {
@@ -351,7 +357,7 @@ h2 {
     }
 
     span.close-modal {
-      right: -2.5rem;
+        right: -2.5rem;
     }
 }
 
@@ -361,10 +367,8 @@ h2 {
     }
 
     h2 {
-      font-size: 18px;
+        font-size: 18px;
     }
-
-
 
     .inner-wrapper {
         padding: 27px 25px 37px;
@@ -408,13 +412,12 @@ h2 {
     }
 
     .popup.open {
-      top: 10%;
-      padding: 20px;
-
-  }
+        top: 10%;
+        padding: 20px;
+    }
 
     span.close-modal {
-      right: -2rem;
-      font-size: 2rem;
+        right: -2rem;
+        font-size: 2rem;
     }
 }
